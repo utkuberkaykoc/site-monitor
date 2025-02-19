@@ -1,0 +1,14 @@
+{
+  "name": "is-site-available",
+  "version": "1.0.0",
+  "description": "A simple website status checker with Discord notifications",
+  "main": "isSiteAvailable.js",
+  "scripts": {
+    "start": "node isSiteAvailable.js"
+  },
+  "author": "Utku Berkay Koç",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
