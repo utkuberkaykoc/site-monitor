@@ -2,9 +2,9 @@
 
 A powerful Node.js package to check website availability and send optional Discord notifications. Supports scheduled monitoring with custom intervals and loop counts.  
 
-![NPM Version](https://img.shields.io/npm/v/site-monitor?color=blue&style=flat-square)  
-![Downloads](https://img.shields.io/npm/dt/site-monitor?color=green&style=flat-square)  
-![License](https://img.shields.io/npm/l/site-monitor?style=flat-square)  
+![NPM Version](https://img.shields.io/npm/v/website-status?color=blue&style=flat-square)  
+![Downloads](https://img.shields.io/npm/dt/website-status?color=green&style=flat-square)  
+![License](https://img.shields.io/npm/l/website-status?style=flat-square)  
 
 ---
 
@@ -12,12 +12,12 @@ A powerful Node.js package to check website availability and send optional Disco
 
 ### Install Globally for CLI Usage  
 ```sh
-npm install -g site-monitor
+npm install -g website-status
 ```
 
 ### Install for Node.js Projects  
 ```sh
-npm install site-monitor
+npm install website-status
 ```
 
 ---
@@ -77,12 +77,12 @@ site-checker https://utku.berkaykoc.net
 
 ### Install the package  
 ```sh
-npm install site-monitor
+npm install website-status
 ```
 
 ### Import the module  
 ```js
-const { isSiteAvailable } = require("site-monitor");
+const { isSiteAvailable } = require("website-status");
 ```
 
 ### **Check if a site is up (without webhook)**  
@@ -124,7 +124,7 @@ This project is licensed under the **MIT License**.
 ---
 
 ## 🌟 Support & Contact  
-- **GitHub Issues:** [Report Bugs or Request Features](https://github.com/utkuberkaykoc/site-monitor/issues)  
+- **GitHub Issues:** [Report Bugs or Request Features](https://github.com/utkuberkaykoc/website-status/issues)  
 - **Give a Star:** ⭐ If you like this package, consider giving it a star on GitHub!  
 
 🚀 **Happy Coding!** 🎮✨  
