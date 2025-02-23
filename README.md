@@ -102,16 +102,6 @@ isSiteAvailable("https://example.com", null, 60, 5); // Check every 60 seconds, 
 
 ---
 
-## 📂 **Setting Up `.env` for Discord Webhook (Optional)**  
-If you want to **set a default webhook URL**, create a `.env` file in your project root:  
-
-```
-DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/your-webhook-url
-```
-
-Then, you can simply call `isSiteAvailable(url)` without passing a webhook parameter, and it will use the default webhook.  
-
----
 
 ## 🛠️ Contributing  
 Contributions are welcome! Fork the repository, create a branch, make changes, and submit a PR. 🚀  
