@@ -1,6 +1,6 @@
 {
   "name": "website-status",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A powerful Node.js package to check website availability and send optional Discord notifications.",
   "main": "index.js",
   "bin": {
