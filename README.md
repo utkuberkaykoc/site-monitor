@@ -1,50 +1,131 @@
-# Site Checker
+# Site Monitor | Check Website Status! 🚀  
 
-Bu proje, belirli web sitelerinin durumunu kontrol eder ve sonuçları Discord üzerinden bildirir.
+A powerful Node.js package to check website availability and send optional Discord notifications. Supports scheduled monitoring with custom intervals and loop counts.  
 
-## Kurulum
+![NPM Version](https://img.shields.io/npm/v/site-monitor?color=blue&style=flat-square)  
+![Downloads](https://img.shields.io/npm/dt/site-monitor?color=green&style=flat-square)  
+![License](https://img.shields.io/npm/l/site-monitor?style=flat-square)  
 
-1. Bu projeyi klonlayın:
-   ```sh
-   git clone https://github.com/utkuberkaykoc/isSiteAvailable.git
-   cd isSiteAvailable
-   ```
+---
 
-2. Gerekli paketleri yükleyin:
-   ```sh
-   npm install
-   ```
+## 📦 Installation  
 
-3. `index.js` dosyasındaki `siteURLs` ve `discordWebhookURL` değişkenlerini güncelleyin:
-   - `siteURLs`: Kontrol etmek istediğiniz web sitelerinin URL'lerini bu diziye ekleyin.
-   - `discordWebhookURL`: Discord Webhook URL'nizi bu değişkene ekleyin.
-
-   Örnek:
-   ```javascript
-   const siteURLs = [
-     'https://utku.berkaykoc.net',
-     'https://example.com',
-     'https://anotherexample.com'
-   ];
-   const discordWebhookURL = 'YOUR_DISCORD_WEBHOOK_URL';
-   ```
-
-4. Uygulamayı başlatın:
-   ```sh
-   npm start
-   ```
-
-## Kullanım
-
-Bu uygulama, belirli web sitelerinin durumunu her dakika kontrol eder ve sonuçları Discord'a bildirir. Kontrol süresini ayarlamak için `setInterval` fonksiyonundaki süreyi (milisaniye cinsinden) güncelleyebilirsiniz.
-
-Örnek:
-```javascript
-// Web sitelerini her dakika kontrol et
-checkAllWebsites();
-setInterval(checkAllWebsites, 60000); // 60000 milisaniye = 1 dakika
+### Install Globally for CLI Usage  
+```sh
+npm install -g site-monitor
 ```
 
-## Lisans
+### Install for Node.js Projects  
+```sh
+npm install site-monitor
+```
 
-Bu proje MIT lisansı ile lisanslanmıştır.
+---
+
+## 🚀 Usage  
+
+### 🔍 Check a Single Website Once  
+```sh
+site-checker https://utku.berkaykoc.net
+```
+📌 **Output:**  
+✅ `https://utku.berkaykoc.net is UP!`  
+or  
+❌ `https://utku.berkaykoc.net is DOWN!`  
+
+---
+
+## 📢 **Optional Discord Webhook Notifications**  
+If you want to receive a Discord notification when a site is down or up, provide a **Webhook URL**:  
+```sh
+site-checker https://utku.berkaykoc.net https://discord.com/api/webhooks/your-webhook-url
+```
+📌 **If no webhook is provided, it will only print the result in the terminal.**  
+
+---
+
+## 🔄 **Scheduled Monitoring (Interval & Loop Count)**  
+You can set a monitoring interval and specify how many times to repeat the check.  
+
+```sh
+site-checker <URL> <Webhook (optional)> <Interval in seconds (optional)> <Loop count (optional)>
+```
+
+### **Rules:**  
+- **If no interval or loop count is given, it runs only once.**  
+- **Minimum interval is 30 seconds.**  
+- **Maximum loop count is 50 times.**  
+
+📌 **Examples:**  
+```sh
+# Check every 30 seconds, repeat 3 times
+site-checker https://utku.berkaykoc.net null 30 3
+
+# Check every 60 seconds, repeat 10 times
+site-checker https://utku.berkaykoc.net null 60 10
+
+# Check every 45 seconds, repeat 5 times, and send Discord notifications
+site-checker https://utku.berkaykoc.net https://discord.com/api/webhooks/your-webhook-url 45 5
+
+# If no interval or loopCount is given, it runs only once
+site-checker https://utku.berkaykoc.net
+```
+
+---
+
+## 📜 **Using in a Node.js Project**  
+
+### Install the package  
+```sh
+npm install site-monitor
+```
+
+### Import the module  
+```js
+const { isSiteAvailable } = require("site-monitor");
+```
+
+### **Check if a site is up (without webhook)**  
+```js
+isSiteAvailable("https://example.com");
+```
+
+### **Check if a site is up (with webhook)**  
+```js
+isSiteAvailable("https://example.com", "https://discord.com/api/webhooks/your-webhook-url");
+```
+
+### **Check a site with custom interval & loop count**  
+```js
+isSiteAvailable("https://example.com", null, 60, 5); // Check every 60 seconds, 5 times
+```
+
+---
+
+## 📂 **Setting Up `.env` for Discord Webhook (Optional)**  
+If you want to **set a default webhook URL**, create a `.env` file in your project root:  
+
+```
+DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/your-webhook-url
+```
+
+Then, you can simply call `isSiteAvailable(url)` without passing a webhook parameter, and it will use the default webhook.  
+
+---
+
+## 🛠️ Contributing  
+Contributions are welcome! Fork the repository, create a branch, make changes, and submit a PR. 🚀  
+
+---
+
+## 📜 License  
+This project is licensed under the **MIT License**.  
+
+---
+
+## 🌟 Support & Contact  
+- **GitHub Issues:** [Report Bugs or Request Features](https://github.com/utkuberkaykoc/site-monitor/issues)  
+- **Give a Star:** ⭐ If you like this package, consider giving it a star on GitHub!  
+
+🚀 **Happy Coding!** 🎮✨  
+

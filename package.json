@@ -1,14 +1,39 @@
 {
-  "name": "is-site-available",
+  "name": "site-monitor",
   "version": "1.0.0",
-  "description": "A simple website status checker with Discord notifications",
-  "main": "isSiteAvailable.js",
-  "scripts": {
-    "start": "node isSiteAvailable.js"
+  "description": "A powerful Node.js package to check website availability and send optional Discord notifications.",
+  "main": "index.js",
+  "bin": {
+    "site-checker": "./cli.js"
   },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/utkuberkaykoc/site-monitor.git"
+  },
+  "keywords": [
+    "website",
+    "status",
+    "checker",
+    "uptime",
+    "monitoring",
+    "ping",
+    "availability",
+    "site-checker",
+    "http-status",
+    "website-monitor",
+    "discord",
+    "webhook",
+    "automation",
+    "server-check",
+    "health-check"
+  ],
   "author": "Utku Berkay Koç",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.1"
+    "node-fetch": "^2.6.7",
+    "dotenv": "^16.0.3"
   }
 }
